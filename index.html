@@ -40,8 +40,6 @@
     <link href="https://app.thesimple.vn/css/slick.css?ver=1718544947" rel="stylesheet">
     <link href="https://app.thesimple.vn/css/addtocalendar.css?ver=1718544947" rel="stylesheet">
 
-    
-
     <style type="text/css">
         :root{
             --main-color: #836e5c;
@@ -68,8 +66,7 @@
             background-color: #fdf1ef !important;
         }
 
-        
-        
+       
         
     </style>
 
@@ -3250,10 +3247,10 @@
 					<!-- </button> -->
 				<!-- </div> -->
 
-				 <audio id="backgroundMusic" loop autoplay>
+				<audio id="backgroundMusic" loop autoplay muted>
 					<source src="image/nhac/nhacnen.mp3" type="audio/mpeg">
-
-				</audio> 
+					Your browser does not support the audio element.
+				</audio>
 				
 			 <!-- <audio id="backgroundMusic" loop> -->
 				<!-- <source src="image/nhac/nhacnen.mp3" type="audio/mpeg"> -->
@@ -3304,6 +3301,19 @@
 <script type="text/javascript" src="https://app.thesimple.vn/template-thiep/thiep-cuoi-1/js/sweetalert.min.js?ver=1718544947"></script>
 <script type="text/javascript" src="https://app.thesimple.vn/template-thiep/thiep-cuoi-1/js/stylersvp.js?ver=1718544947"></script>
 <script src="https://app.thesimple.vn/HTML/js/jstz.min.js?ver=1718544947"></script>
+ <script>
+        function playAudio() {
+            var audio = document.getElementById("backgroundMusic");
+            audio.muted = false;
+            audio.play();
+        }
+
+        document.addEventListener('click', function() {
+            var audio = document.getElementById("backgroundMusic");
+            audio.muted = false;
+            audio.play();
+        });
+    </script>
 <script type="text/javascript">
 	
     <!-- let tz = jstz.determine(); -->
