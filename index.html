@@ -3301,9 +3301,15 @@
 <script type="text/javascript" src="https://app.thesimple.vn/template-thiep/thiep-cuoi-1/js/sweetalert.min.js?ver=1718544947"></script>
 <script type="text/javascript" src="https://app.thesimple.vn/template-thiep/thiep-cuoi-1/js/stylersvp.js?ver=1718544947"></script>
 <script src="https://app.thesimple.vn/HTML/js/jstz.min.js?ver=1718544947"></script>
-
 <script type="text/javascript">
-	
+	document.addEventListener('click', function() {
+		var audio = document.getElementById("backgroundMusic");
+		audio.muted = false;
+		audio.play();
+	});
+</script>
+<script type="text/javascript">
+		
     <!-- let tz = jstz.determine(); -->
     <!-- let htmlx = $(".addevent").attr('data-event'); -->
     <!-- //htmlx = htmlx.replace('\n, "\n"); -->
