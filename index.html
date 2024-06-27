@@ -3247,7 +3247,7 @@
 					<!-- </button> -->
 				<!-- </div> -->
 
-				<audio id="backgroundMusic" loop autoplay muted>
+				<audio id="backgroundMusic" muted>
 					<source src="image/nhac/nhacnen.mp3" type="audio/mpeg">
 					Your browser does not support the audio element.
 				</audio>
@@ -3257,8 +3257,8 @@
 			<!-- </audio> -->
 			<div class="module gf_module- gf_module--lg gf_module--md gf_module--sm gf_module--xs "> 
 				<div class="gla_music_icon btn-play-audio">
-					<button class="btn-musicf" fdprocessedid="bu86mg" onclick="playAudio()">
-						 <i class="fa fa-music"></i>
+					<button class="btn-musicf" fdprocessedid="bu86mg" onclick="toggleMusic()">
+						 <i class="fa fa-music after-slash" id="btnNhac"></i>
 					</button> 
 				 </div> 
 			</div>
@@ -3302,17 +3302,24 @@
 <script type="text/javascript" src="https://app.thesimple.vn/template-thiep/thiep-cuoi-1/js/stylersvp.js?ver=1718544947"></script>
 <script src="https://app.thesimple.vn/HTML/js/jstz.min.js?ver=1718544947"></script>
 <script type="text/javascript">
-	function playAudio() {
-            var audio = document.getElementById("backgroundMusic");
-            audio.muted = false;
-            audio.play();
-        }
+		let isPlaying = false;
 
-        <!-- document.addEventListener('click', function() { -->
-            <!-- var audio = document.getElementById("backgroundMusic"); -->
-            <!-- audio.muted = false; -->
-            <!-- audio.play(); -->
-        <!-- }); -->
+        function toggleMusic() {
+            const musicIcon = document.getElementById('btnNhac');
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            
+            if (isPlaying) {
+                musicIcon.classList.remove('after-slash');
+                backgroundMusic.pause();
+                backgroundMusic.muted = true;
+            } else {
+                musicIcon.classList.add('after-slash');
+                backgroundMusic.muted = false;
+                backgroundMusic.play();
+            }
+            
+            isPlaying = !isPlaying;
+        }
 </script>
 <script type="text/javascript">
 		
